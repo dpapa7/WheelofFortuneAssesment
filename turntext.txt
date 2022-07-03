@@ -1,1 +1,1 @@
-It is this person's turn
+Hello {nameturn}, it is your turn. You currently have {moneyturn} in your round total.
