@@ -250,7 +250,7 @@ def buyVowel(playerNum):
                 y = True
 
     else:
-        print(f"\nPlayer {playerNum} does not have enough money to buy a vowel")
+        print(f"\nPlayer {playerNum + 1} does not have enough money to buy a vowel")
         goodGuess = True
     # Take in a player number
     # Ensure player has 250 for buying a vowelcost
@@ -334,6 +334,7 @@ def wofRound():
     global roundWord
     global blankWord
     global roundstatus
+    
     initPlayer = wofRoundSetup()
     
     x = "_"
@@ -343,18 +344,21 @@ def wofRound():
     while round:
         
         if x in blankWord:
+            if initPlayer > 2:
+                initPlayer = 0
+
             wofTurn(initPlayer)
             initPlayer += 1
 
-            if initPlayer > 2:
-                initPlayer = 0
         else:
             
             #push winners roundtotal to gametotal
+            initPlayer -= 1
             y = players[initPlayer]["roundtotal"]
             players[initPlayer]["gametotal"] = y
-
-            print(roundstatus.format(playerNum = initPlayer + 1, win = players[initPlayer]["gametotal"]))
+            playername =players[initPlayer]["name"]
+           
+            print(roundstatus.format(playerName = playername, win = players[initPlayer]["gametotal"]))
             round = False
     
 
@@ -368,8 +372,9 @@ def wofFinalRound():
     global roundWord
     global blankWord
     global finalroundtext
+    global finalprize
     winplayer = 0
-    amount = 7000000
+    amount = finalprize
 
     roundWord , blankWord = getWord()
 
@@ -409,7 +414,7 @@ def wofFinalRound():
     # need to do e
     e = 'e'
     if e in roundwordList:
-        print("e is in the word!")        
+        print(f"{name} e is in the word!")        
         eIndex = roundwordList.index('e')
         blankWord[eIndex] = e
 

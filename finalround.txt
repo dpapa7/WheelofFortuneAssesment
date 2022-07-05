@@ -1,1 +1,1 @@
-WELCOME TO THE FINAL ROUND {finalplayername}. \nIf you win this round you can win an additional {amount}.
+WELCOME TO THE FINAL ROUND! {finalplayername} if you win this round you can win an additional {amount}.

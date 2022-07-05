@@ -1,1 +1,1 @@
-Player {playerNum} has won this round and now has {win} in his gametotal account.
+{playerName} has won this round and now has {win} in his gametotal account.
